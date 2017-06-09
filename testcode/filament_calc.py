@@ -25,15 +25,18 @@ def make_gcode(ini_file = "TAZplaFine.ini", stl_file="pear_resize.stl", output_f
 ######
 
 def get_file(filepath="pyTest.gcode"):
-	datafile = file(filepath) #Right now this can just be a file in the same folder as the script
+	datafile = open(filepath, 'r') #Right now this can just be a file in the same folder as the script
 	return datafile
 
 ## Functions all set, let get some data...
 ## need to get price, density. and stl file info first.
+density = 1.25
+price = 5 ## price in 
+
 make_gcode() ##Call slic3r to get gcode from STL file. just using the defaults right now
 the_file = get_file() ## load gcode from disk...
-vol = get_filament_line(the_file) ## Get volume of filament used from the gcode.
-vol = mass * density
+vol = get_vol(the_file) ## Get volume of filament used from the gcode.
+mass = vol * density
 cost = (mass * price)/100
 printval = str(cost)
-print "It's gonna cost you " + printval
+print ("It's gonna cost you " + printval)
