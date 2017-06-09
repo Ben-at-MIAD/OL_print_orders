@@ -31,7 +31,7 @@ def get_file(filepath="pyTest.gcode"):
 ## Functions all set, let get some data...
 ## need to get price, density. and stl file info first.
 density = 1.25
-price = 5 ## price in 
+price = 5 ## price of filament per gram in cents
 
 make_gcode() ##Call slic3r to get gcode from STL file. just using the defaults right now
 the_file = get_file() ## load gcode from disk...
