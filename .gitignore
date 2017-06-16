@@ -1,5 +1,7 @@
 *.pyc
 *.sqlite3
+*.gcode
+*.stl
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
